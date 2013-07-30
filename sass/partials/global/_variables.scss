@@ -1,0 +1,30 @@
+////////////////////////
+// Variables Partials
+//
+// All of your variables should go in this file.
+////////////////////////
+$phablet: 500px;
+$measure-break: 700px;
+$menu-break: 900px;
+$bkpt-gold: 500px 900px;
+$wide: 1000px;
+
+// $grids: 2;
+// $grids: add-grid(4 at $menu-break);
+// $gutters: .15;
+
+
+/**
+ * 960 grid system with Singularity
+ */
+
+$grids: 12; // Number of Columns
+$grids: add-grid(2 3 at $phablet);
+$grids: add-grid(3 6 3 at $measure-break); // test
+$grids: add-grid(3 3 4 5 at $wide);
+$gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3
+
+// $output: 'float';
+
+
+

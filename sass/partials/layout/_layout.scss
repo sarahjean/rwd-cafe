@@ -1,0 +1,149 @@
+// body {
+//   background-color: offwhite;
+// }
+
+
+
+// // If the window is at least 500px wide...
+// @media (min-width: 500px) {
+
+//   body {
+//   }
+// }
+
+// // If the window is less than 785px wide...
+// @media (max-width: 785px) {
+//   body {
+//   }
+// }
+
+// // If the user is printing the page...
+// @media (print) {}
+
+// // If the window is in between 520px and 699px...
+// @media all and (min-width: 520px) and (max-width: 699px) {}
+
+// #info {
+//   background-color: #ff0;
+//   @include breakpoint($measure-break) {
+//     background-color: #0f0;
+//   }
+//   @include breakpoint($menu-break) {
+//     background-color: #f00;
+//   }
+// }
+
+// #menu {
+//   background-color: #0ff;
+//   @include breakpoint($bkpt-gold) {
+//     background-color: gold;
+//   }
+// }
+
+// #about {
+//   background-color: #f0f;
+// }
+
+/**
+ * 960 grid system with Singularity
+ */
+
+// $grids: 12; // Number of Columns
+// $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3
+
+// $output: 'float';
+
+// @include grid-span($span, $position);
+
+// $span is the number of columns to span
+// $position is what column to start from
+
+.container {
+  max-width: 960px; // Outer Container
+  padding: 0 10px; // Side Gutter
+  margin: 0 auto; // Center Container
+  @include clearfix; // Have container clear floats properly
+}
+
+.left {
+  @include grid-span(6,1);
+}
+
+.right {
+  @include grid-span(6,7);
+}
+
+.hours {
+  @include grid-span(6,1);
+}
+
+.contact {
+  @include grid-span(6,7);
+}
+
+main {
+  @extend .container;
+  padding: 0;
+  @include background-grid;
+
+}
+
+#info {
+  background-color: rgba(#ff0, .5);
+  @include breakpoint($phablet) {
+    // @include grid-span(4,1);
+    @include grid-span(1,2);
+  }
+
+  @include breakpoint($measure-break) {
+    @include grid-span(1,1);
+  }
+
+  @include breakpoint($wide) {
+    @include grid-span(1,4);
+  }
+
+}
+
+#menu {
+  background-color: rgba(#0ff, .5);
+  @include breakpoint($phablet) {
+    // @include grid-span(4,5);
+    @include grid-span(1,2);
+    clear: right;
+
+  }
+
+  @include breakpoint($measure-break) {
+    @include grid-span(1,2);
+  }
+
+  @include breakpoint($wide) {
+    @include grid-span(2,1);
+  }
+
+}
+
+
+#about {
+  background-color: rgba(#f0f, .5);
+  @include breakpoint($phablet) {
+    // @include grid-span(4,9);
+    @include grid-span(1,1);
+    float: none;
+  }
+
+  @include breakpoint($measure-break) {
+    @include grid-span(1,3);
+  }
+
+  @include breakpoint($wide) {
+
+    @include grid-span(1,3);
+
+  }
+}
+
+.ratio-16-9 {
+  @include intrinsic-ratio;
+}
